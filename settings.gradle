@@ -1,1 +1,3 @@
 rootProject.name = 'find-poop'
+include "find-poop-api"
+include "find-poop-core"
