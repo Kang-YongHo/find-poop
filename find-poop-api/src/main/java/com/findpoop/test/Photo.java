@@ -1,11 +1,13 @@
 package com.findpoop.test;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
 public class Photo {
     private String url;
     private String photographer;
-    @SerializedName("photographer_url")
+//    @SerializedName(value = "photographerUrl", alternate = {"photographer_url"})
+    @JsonProperty("photographer_url")
     private String photographerUrl;
     private ImageSrc src;
 

@@ -1,0 +1,10 @@
+dependencies {
+    implementation project(':find-poop-core')
+}
+
+bootJar {
+    enabled = true
+}
+jar {
+    enabled = false
+}

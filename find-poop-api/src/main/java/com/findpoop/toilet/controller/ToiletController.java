@@ -1,6 +1,7 @@
 package com.findpoop.toilet.controller;
 
 import com.findpoop.toilet.application.ToiletService;
+import com.findpoop.toilet.application.request.ToiletRequests;
 import com.findpoop.toilet.application.response.ToiletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +20,8 @@ public class ToiletController {
     private final ToiletService toiletService;
 
     @GetMapping("/toilets")
-    public ResponseEntity<ToiletResponse> toilets(){
-        ToiletResponse response = toiletService.get();
+    public ResponseEntity<ToiletResponse> toilets(ToiletRequests req){
+        ToiletResponse response = toiletService.get(req);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(response);
