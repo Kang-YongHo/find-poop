@@ -1,0 +1,68 @@
+#spring:
+#  datasource:
+#    hikari:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/poop?useUnicode=true&characterEncoding=utf-8
+#      username: root
+#      password: poop1234
+#      connection-timeout: 1000
+#      maximum-pool-size: 100
+#      minimum-idle: 40
+pexel:
+  search:
+    uri: https://api.pexels.com/v1/search
+  api:
+    key: ENC(Hzrl8CL+5j3UxnU5dsPvWP5epV3sKvnxiejmf56jFBwDtI3nE1c4m8pMTdMXk1ncYZjn8pDiDAOh5Iufpt7t9kkM2LQTk0Mz6vA20+oxl7qdeb+DtWoddnQ4QMwEdKpk)
+
+toilet:
+  api:
+    uri: http://api.data.go.kr/openapi/tn_pubr_public_toilet_api
+    key: ENC(bEsaEaKSU2hBsimWTTOLs7Gw1OE0txZdaa+6hCSGTmspQjP/upCvEDzsJVjpyVGDaHJpehpwudismjrrn+kXYAroge6ZiRAydm7ZgtTJe1Og3xSjTD8zFa8FUJ0kGTmpbuV4363pQsHTtJWt7t8cYQw7dU48ywkm4byLD0MrMplBfUyXtD/BfQ6mlvJ0/V1z)
+
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    reactor:
+      netty:
+        http:
+          client: trace
+  file:
+    path: /Users/dlo/logs
+  logback:
+    rollingpolicy:
+      max-history: 100
+      max-file-size: 100MB
+
+server:
+  port: 8081
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    password: no
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 60000
+        read-timeout: 10000
+spring:
+  datasource:
+    url: jdbc:mysql:aws://localhost:3306/poop?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: poop1234
+    driver-class-name: software.aws.rds.jdbc.mysql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: mysql
+
+    devtools:
+      livereload:
+        enabled: true
+    profiles:
+      active: local
