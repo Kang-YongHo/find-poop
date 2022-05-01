@@ -26,7 +26,7 @@ logging:
       max-file-size: 100MB
 
 server:
-  port: 8081
+  port: 8080
 
 jasypt:
   encryptor:
@@ -55,7 +55,5 @@ spring:
     livereload:
       enabled: true
   profiles:
-    active: local
+    active: prd
 
-  config:
-    use-legacy-processing: true
